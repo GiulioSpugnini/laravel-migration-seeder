@@ -13,8 +13,14 @@
                 <h6>Orario di partenza: {{ $train->orario_di_partenza }}</h6>
                 <h6>Orario di arrivo: {{ $train->orario_di_arrivo }}</h6>
                 <h6>Carrozza: {{ $train->carrozze }}</h6>
-                <h6>In Orario: {{ $train->in_orario }}</h6>
-                <h6>Cancellato: {{ $train->cancellato }}</h6>
+                <div>
+                    @if ($train->cancellato == 0)
+                        <h6 class='text-danger'>CANCELLATO
+                        @else
+                            <h6 class='text-primary'>IN ORARIO</h6>
+                    @endif
+                    </h6>
+                </div>
                 <p class="card-text">La ringraziamo per averci scelto.</p>
                 {{-- <a href="#" class="btn btn-primary">Più dettagli</a> --}}
             </div>
